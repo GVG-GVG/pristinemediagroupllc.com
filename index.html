@@ -275,15 +275,18 @@
             <p class="sub">Tell us about your goals — whether you're growing demand, lowering acquisition costs, or exploring a new channel.</p>
             <div class="info">
               <div class="r"><div class="lab">Office</div><div class="val">Pristine Media Group LLC<br>4305 Windsor Centre Trail, Suite 400<br>Flower Mound, Texas 75028</div></div>
-              <div class="r"><div class="lab">Phone</div><div class="val"><a href="tel:2144324118">214-432-4118</a></div></div>
               <div class="r"><div class="lab">Email</div><div class="val"><a href="mailto:evan.fluegel@pristinemediagroupllc.com">evan.fluegel@pristinemediagroupllc.com</a></div></div>
             </div>
           </div>
-          <form onsubmit="event.preventDefault();this.reset();this.querySelector('button').textContent='Thank you — we will be in touch';">
-            <input type="text" placeholder="Your name" required />
-            <input type="email" placeholder="Email address" required />
-            <input type="text" placeholder="Company" />
-            <textarea rows="4" placeholder="How can we help?" required></textarea>
+          <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="__WEB3FORMS_ACCESS_KEY__" />
+            <input type="hidden" name="subject" value="New inquiry from pristinemediagroupllc.com" />
+            <input type="hidden" name="from_name" value="Pristine Media Group website" />
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Email address" required />
+            <input type="text" name="company" placeholder="Company" />
+            <textarea name="message" rows="4" placeholder="How can we help?" required></textarea>
             <button type="submit">Send message</button>
           </form>
         </div>
@@ -312,6 +315,21 @@
   document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el)});
   // card glow follow
   document.querySelectorAll('.card').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px')})});
+  // contact form -> Web3Forms (AJAX, stay on page)
+  const cf=document.getElementById('contactForm');
+  if(cf){cf.addEventListener('submit',async(e)=>{
+    e.preventDefault();
+    const btn=cf.querySelector('button');
+    const key=cf.querySelector('[name=access_key]').value;
+    if(key.indexOf('__')===0){cf.reset(); btn.textContent='Thank you — we will be in touch'; return;}
+    btn.disabled=true; btn.textContent='Sending…';
+    try{
+      const res=await fetch(cf.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(cf)});
+      const data=await res.json();
+      if(data.success){cf.reset(); btn.textContent='Thank you — we will be in touch';}
+      else{btn.disabled=false; btn.textContent='Something went wrong — try again';}
+    }catch(err){btn.disabled=false; btn.textContent='Network error — try again';}
+  });}
 </script>
 </body>
 </html>
