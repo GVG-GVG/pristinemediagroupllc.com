@@ -127,8 +127,10 @@
   .info .r{display:flex;gap:18px;padding:18px 0;border-top:1px solid var(--border)}
   .info .r:first-child{border-top:none}
   .info .lab{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);width:74px;flex:0 0 74px;padding-top:3px}
-  .info .val{font-size:15.5px}
+  .info .val{font-size:15.5px;overflow-wrap:anywhere}
+  .info .val a{overflow-wrap:anywhere}
   .info .val a:hover{color:var(--g1)}
+  .pill-extra{display:inline}
   form{display:grid;gap:12px}
   form input,form textarea{width:100%;background:rgba(0,0,0,.25);border:1px solid var(--border);border-radius:12px;padding:14px 16px;color:var(--text);font-family:inherit;font-size:15px}
   form input::placeholder,form textarea::placeholder{color:var(--muted-2)}
@@ -153,6 +155,7 @@
     .ctapanel{padding:36px}
   }
   @media(max-width:560px){.grid4,.grid4b{grid-template-columns:1fr}}
+  @media(max-width:480px){.pill-extra{display:none}.pill{padding:7px 16px 7px 14px}}
   @media(prefers-reduced-motion:reduce){*{animation:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
@@ -177,7 +180,7 @@
   <section class="hero">
     <div class="aurora"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
     <div class="wrap hero-inner">
-      <div class="pill"><span class="dot"></span><b>Performance media</b><span style="color:var(--muted-2)">·</span>built for measurable growth</div>
+      <div class="pill"><span class="dot"></span><b>Performance media</b><span class="pill-extra"><span style="color:var(--muted-2)">·</span> built for measurable growth</span></div>
       <h1>Reach the consumers <span class="grad">ready to act.</span></h1>
       <p>Pristine Media Group connects brands with high-intent consumers across every channel — and proves the return on every dollar.</p>
       <div class="hero-actions">
