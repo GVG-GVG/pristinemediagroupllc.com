@@ -138,6 +138,21 @@
   form button{margin-top:2px;justify-content:center;background:linear-gradient(120deg,var(--g1),var(--g2));color:#fff;border:none;padding:15px;border-radius:12px;font-weight:600;font-size:15px;font-family:inherit;cursor:pointer;transition:transform .15s,box-shadow .25s}
   form button:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(123,92,255,.45)}
 
+  /* LIVE TRANSFERS */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:50px}
+  .tf-note{display:flex;align-items:center;gap:14px;margin-top:20px;padding:20px 24px;border:1px solid var(--border);border-radius:16px;background:linear-gradient(120deg,rgba(91,123,255,.09),rgba(155,92,255,.05));font-size:16px;color:var(--text)}
+  .tf-note .chk{flex:0 0 28px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;background:linear-gradient(120deg,var(--g1),var(--g2))}
+
+  /* VERTICALS */
+  .vert-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:50px}
+  .vert{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px;transition:transform .25s,border-color .25s}
+  .vert:hover{border-color:var(--border-2);transform:translateY(-4px)}
+  .vert h3{font-size:21px;font-weight:600;margin-bottom:6px}
+  .vert .vsub{font-size:13px;color:var(--muted-2);margin-bottom:22px}
+  .tags{display:flex;flex-wrap:wrap;gap:10px}
+  .tag{font-size:14px;padding:9px 16px;border:1px solid var(--border);border-radius:100px;background:rgba(255,255,255,.03);color:var(--text);transition:border-color .2s,transform .2s}
+  .tag:hover{border-color:var(--g2);transform:translateY(-2px)}
+
   /* FOOTER */
   footer{border-top:1px solid var(--border);padding:48px 0 38px}
   .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
@@ -149,6 +164,7 @@
     section{padding:72px 0}
     .nav-links{display:none}
     .grid4,.grid4b{grid-template-columns:1fr 1fr}
+    .grid3,.vert-grid{grid-template-columns:1fr}
     .node{grid-template-columns:1fr;gap:8px}
     .vrow{grid-template-columns:1fr}
     .cgrid{grid-template-columns:1fr;gap:36px}
@@ -166,8 +182,9 @@
     <a href="#top" class="brand">Pristine Media Group</a>
     <nav class="nav-links">
       <a href="#services">Services</a>
+      <a href="#transfers">Live Transfers</a>
+      <a href="#verticals">Verticals</a>
       <a href="#approach">Approach</a>
-      <a href="#why">Why us</a>
       <a href="#values">Values</a>
     </nav>
     <a href="#contact" class="btn btn-grad">Get in touch</a>
@@ -193,8 +210,8 @@
   <!-- MARQUEE -->
   <div class="marquee">
     <div class="track">
-      <span>Audience targeting<i></i></span><span>Multi-channel media<i></i></span><span>Full-funnel analytics<i></i></span><span>Lead quality<i></i></span><span>Always-on optimization<i></i></span><span>Transparent reporting<i></i></span>
-      <span>Audience targeting<i></i></span><span>Multi-channel media<i></i></span><span>Full-funnel analytics<i></i></span><span>Lead quality<i></i></span><span>Always-on optimization<i></i></span><span>Transparent reporting<i></i></span>
+      <span>Live transfers<i></i></span><span>TCPA-compliant<i></i></span><span>AI-qualified<i></i></span><span>Real-time delivery<i></i></span><span>Home improvement<i></i></span><span>Insurance &amp; data<i></i></span>
+      <span>Live transfers<i></i></span><span>TCPA-compliant<i></i></span><span>AI-qualified<i></i></span><span>Real-time delivery<i></i></span><span>Home improvement<i></i></span><span>Insurance &amp; data<i></i></span>
     </div>
   </div>
 
@@ -210,6 +227,45 @@
         <div class="card reveal"><div class="idx grad">02</div><h3>Multi-channel media</h3><p>Coordinated campaigns across search, social, display, native, and connected channels — run as one system.</p></div>
         <div class="card reveal"><div class="idx grad">03</div><h3>Data &amp; analytics</h3><p>Full-funnel measurement that turns campaign signals into decisions and optimizes spend toward outcomes.</p></div>
         <div class="card reveal"><div class="idx grad">04</div><h3>Optimization</h3><p>Always-on testing that drives down cost per acquisition while improving the quality of every lead.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE TRANSFERS -->
+  <section id="transfers" class="transfers">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="eyebrow">Live transfers</div>
+        <h2>Verified homeowners, delivered <span class="grad">live and ready to engage.</span></h2>
+        <p class="sub">PMG generates TCPA-compliant homeowners through owned and operated web properties, pre-qualifies them through an AI-powered call center, and delivers them as live transfers to buyers in real time.</p>
+      </div>
+      <div class="grid3">
+        <div class="card reveal"><div class="idx grad">01</div><h3>Generate</h3><p>TCPA-compliant homeowners sourced through our owned and operated web properties.</p></div>
+        <div class="card reveal"><div class="idx grad">02</div><h3>Pre-qualify</h3><p>Every consumer is screened and qualified through our AI-powered call center.</p></div>
+        <div class="card reveal"><div class="idx grad">03</div><h3>Deliver</h3><p>Qualified consumers are handed to buyers as live transfers, in real time.</p></div>
+      </div>
+      <div class="tf-note reveal"><span class="chk">✓</span>Every transfer is a verified, consent-based consumer ready to engage.</div>
+    </div>
+  </section>
+
+  <!-- VERTICALS -->
+  <section id="verticals">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="eyebrow">Verticals</div>
+        <h2>Where we drive <span class="grad">qualified demand.</span></h2>
+      </div>
+      <div class="vert-grid">
+        <div class="vert reveal">
+          <h3>Home Improvement</h3>
+          <div class="vsub">High-intent homeowner projects</div>
+          <div class="tags"><span class="tag">Roofing</span><span class="tag">Windows</span><span class="tag">Bath Remodel</span><span class="tag">Solar</span><span class="tag">Mortgage</span></div>
+        </div>
+        <div class="vert reveal">
+          <h3>Insurance &amp; Data</h3>
+          <div class="vsub">Coverage and qualified consumer data</div>
+          <div class="tags"><span class="tag">Final Expense</span><span class="tag">Medicare</span><span class="tag">ACA</span><span class="tag">Life Insurance</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -301,7 +357,7 @@
     <div class="foot">
       <a href="#top" class="brand">Pristine Media Group</a>
       <div class="links">
-        <a href="#services">Services</a><a href="#approach">Approach</a><a href="#why">Why us</a><a href="#contact">Contact</a>
+        <a href="#services">Services</a><a href="#transfers">Live Transfers</a><a href="#verticals">Verticals</a><a href="#approach">Approach</a><a href="#contact">Contact</a>
       </div>
       <div class="copy">© <span id="yr"></span> Pristine Media Group LLC · Flower Mound, Texas · All rights reserved.</div>
     </div>
